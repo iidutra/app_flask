@@ -12,7 +12,7 @@ class DevelopmentConfig(Config):
     IP_HOST = 'localhost'
     PORT_HOST = 8000
     URL_MAIN = 'http://%s:%s' % (IP_HOST, PORT_HOST)
-    SQLALCHEMY_DATABASE_URI = 'mysql+mysql.connector://tiago.silva:de_m7jBG^WZ=@localhost:3306/dashboard_aula'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:postgres@localhost:5432/covid'
 
 class TestingConfig(Config):
    pass

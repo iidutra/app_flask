@@ -11,6 +11,13 @@ def create_app(config):
 
     config.APP = app
 
+    @app.after_request
+    def after_request(response):
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+        response.headers.add('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS')
+        return response
+
     @app.route('/')
     def index():
         return 'oi'
